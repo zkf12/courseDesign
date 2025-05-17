@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: CourseDesign
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/userdb
+    username: userdb
+    password: 123456
+  web:
+    resources:
+      static-locations:
+        - "classpath:/static/"
+        - "file:${user.dir}/uploads/"
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    org.apache.ibatis: DEBUG
+    org.example.coursedesign.mapper: DEBUG  # 替换成你的 Mapper 包名
+    java.sql: DEBUG
+server:
+  port: 8080
+  address: 0.0.0.0  # 允许所有IP访问（重要！）
